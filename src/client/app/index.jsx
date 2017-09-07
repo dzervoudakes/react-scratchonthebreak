@@ -19,19 +19,21 @@ class ScratchOnTheBreak extends React.Component {
                 <BrowserRouter basename={path}>
                     <Switch>
                         <Route exact path="/" component={Home} />
-                        <Route path="/sob/" component={Scratched} />
+                        <Route path="/sob/">
+                            <Generic text="Was the eightball also pocketed on the break?" showButtons={true} />
+                        </Route>
                         <Route path="/nsob/">
-                            <Generic text="Why are you on this site if no one scratched on the break?" />
+                            <Generic text="Why are you on this site if no one scratched on the break?" showButtons={false} />
                         </Route>
                         <Route path="/eob/">
-                            <Generic text="Your opponent lost, unlucky for him or her. He or she probably would have whooped you..." />
+                            <Generic text="Your opponent lost, unlucky for him or her. He or she probably would have whooped you..." showButtons={false} />
                         </Route>
                         <Route path="/neob/">
-                            <Generic text="Your opponent didn't lose. You are an idiot. You should apologize for not knowing the rules." />
+                            <Generic text="Your opponent didn't lose. You are an idiot. You should apologize for not knowing the rules." showButtons={false} />
                         </Route>
                     </Switch>
                 </BrowserRouter>
-                <a href={path} id="home-link" className="home-link">Home</a>
+                <a href={path} id="homeLink" className="home-link">Home</a>
                 <a href="mailto:mcpeaven@gmail.com?subject=I'm An Idiot">I'm Mad</a>
                 <p className="t-copyright">&copy; McPeaven {new Date().getFullYear()}</p>
             </div>

@@ -2,11 +2,6 @@ import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Link } from 'react-router-dom';
 
-const activateHomeLink = () => {
-    const homeLink = document.getElementById('home-link');
-    homeLink.className += 'active';
-};
-
 export class Home extends React.Component {
     render() {
         return (
@@ -14,48 +9,46 @@ export class Home extends React.Component {
                 <p>You are here because you told someone that they lost a game of pool when they scratched on the break.</p>
                 <p>Please answer the following questions to determine who lost.</p>
                 <p className="sub-header">Did your opponent scratch on the break?</p>
-                <Link to="/sob/">
-                    <RaisedButton primary label="Yes" />
-                </Link>
-                <Link to="/nsob/">
-                    <RaisedButton primary label="No" />
-                </Link>
+                <div className="button-bar">
+                    <Link to="/sob/">
+                        <RaisedButton primary label="Yes" />
+                    </Link>
+                    <Link to="/nsob/">
+                        <RaisedButton primary label="No" />
+                    </Link>
+                </div>
             </div>
         );
     }
 }
 
-// 'scratched on break' view
-export class Scratched extends React.Component {
-    componentDidMount() {
-        activateHomeLink();
-    }
-
-    render() {
-        return (
-            <div className="content-container">
-                <p className="sub-header">Was the eightball also pocketed on the break?</p>
-                <Link to="/eob/">
-                    <RaisedButton primary label="Yes" />
-                </Link>
-                <Link to="/neob/">
-                    <RaisedButton primary label="No" />
-                </Link>
-            </div>
-        );
-    }
-}
-
-// 'not scratched on break', 'eight on break', and 'not eight on break' views
+// 'scratched on break', 'not scratched on break', 'eight on break', and 'not eight on break' views
 export class Generic extends React.Component {
     componentDidMount() {
-        activateHomeLink();
+        const homeLink = document.getElementById('homeLink');
+        homeLink.className += 'active';
     }
 
     render() {
+        const renderButtons = () => {
+            if (this.props.showButtons) {
+                return (
+                    <div className="button-bar">
+                        <Link to="/eob/">
+                            <RaisedButton primary label="Yes" />
+                        </Link>
+                        <Link to="/neob/">
+                            <RaisedButton primary label="No" />
+                        </Link>
+                    </div>
+                );
+            }
+        };
+
         return (
             <div className="content-container">
                 <p className="sub-header">{this.props.text}</p>
+                {renderButtons()}
             </div>
         );
     }
