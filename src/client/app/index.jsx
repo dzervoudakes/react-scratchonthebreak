@@ -11,7 +11,7 @@ class ScratchOnTheBreak extends React.Component {
     render() {
         return (
             <div className="main-content">
-                <h1 className="page-title">ScratchOnTheBreak.com</h1>
+                <h1 className="page-title">Scratch On The Break</h1>
                 {/*
                     @TODO: FB 'like' and 'share' buttons
                     @TODO: PayPal integration
