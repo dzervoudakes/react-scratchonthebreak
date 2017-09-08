@@ -15,13 +15,26 @@ const createFbLikeButton = (d, s, id) => {
     fjs.parentNode.insertBefore(js, fjs);
 };
 
+const createTwitterShareButton = (d, s, id) => {
+    var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    t._e = [];
+    t.ready = function(f) {
+        t._e.push(f);
+    };
+};
+
 class ScratchOnTheBreak extends React.Component {
     render() {
         return (
             <div className="main-content">
                 <h1 className="page-title">Scratch On The Break</h1>
                 <div id="fb-root"></div>
-                {createFbLikeButton(document, 'script', 'facebook-jssdk')}
                 <div
                     className="fb-like"
                     data-href="http://www.scratchonthebreak.com"
@@ -31,6 +44,14 @@ class ScratchOnTheBreak extends React.Component {
                     data-show-faces="false"
                     data-share="true">
                 </div>
+                <a
+                    className="twitter-share-button"
+                    data-text="Check out scratchonthebreak.com!"
+                    href="https://twitter.com/intent/tweet">
+                    Tweet
+                </a>
+                {createFbLikeButton(document, 'script', 'facebook-jssdk')}
+                {createTwitterShareButton(document, 'script', 'twitter-wjs')}
                 <BrowserRouter basename={path}>
                     <Switch>
                         <Route exact path="/" component={Home} />
@@ -51,7 +72,7 @@ class ScratchOnTheBreak extends React.Component {
                 <hr className="gray-rule" />
                 <div className="links-bar">
                     <a href={path} id="homeLink" className="home-link">Home</a>
-                    <a href="mailto:mcpeaven@gmail.com?subject=I'm An Idiot">I'm Mad</a>
+                    <a href="mailto:mcpeaven@gmail.com?subject=I'm%20An%20Idiot">I'm Mad</a>
                 </div>
                 <p className="t-copyright">&copy; McPeaven {new Date().getFullYear()}</p>
             </div>
