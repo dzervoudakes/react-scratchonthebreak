@@ -33,8 +33,11 @@ class ScratchOnTheBreak extends React.Component {
                         </Route>
                     </Switch>
                 </BrowserRouter>
-                <a href={path} id="homeLink" className="home-link">Home</a>
-                <a href="mailto:mcpeaven@gmail.com?subject=I'm An Idiot">I'm Mad</a>
+                <hr className="gray-rule" />
+                <div className="links-bar">
+                    <a href={path} id="homeLink" className="home-link">Home</a>
+                    <a href="mailto:mcpeaven@gmail.com?subject=I'm An Idiot">I'm Mad</a>
+                </div>
                 <p className="t-copyright">&copy; McPeaven {new Date().getFullYear()}</p>
             </div>
         );
@@ -42,9 +45,9 @@ class ScratchOnTheBreak extends React.Component {
 }
 
 const scratchTheme = {
-    fontFamily: 'Open Sans, sans-serif', // @TODO: All the UI
+    fontFamily: 'Lato, sans-serif',
     palette: {
-        primary1Color: '#0080ff'
+        primary1Color: '#28c4b7' //'#30d5c8'
     }
 };
 
