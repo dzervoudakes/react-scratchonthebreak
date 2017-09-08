@@ -7,15 +7,30 @@ import { Home, Generic, Scratched } from './Scratch.jsx';
 
 const path = window.location.pathname;
 
+const createFbLikeButton = (d, s, id) => {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+    fjs.parentNode.insertBefore(js, fjs);
+};
+
 class ScratchOnTheBreak extends React.Component {
     render() {
         return (
             <div className="main-content">
                 <h1 className="page-title">Scratch On The Break</h1>
-                {/*
-                    @TODO: FB 'like' and 'share' buttons
-                    @TODO: PayPal integration
-                */}
+                <div id="fb-root"></div>
+                {createFbLikeButton(document, 'script', 'facebook-jssdk')}
+                <div
+                    className="fb-like"
+                    data-href="http://www.scratchonthebreak.com"
+                    data-layout="button_count"
+                    data-action="like"
+                    data-size="small"
+                    data-show-faces="false"
+                    data-share="true">
+                </div>
                 <BrowserRouter basename={path}>
                     <Switch>
                         <Route exact path="/" component={Home} />
@@ -47,7 +62,7 @@ class ScratchOnTheBreak extends React.Component {
 const scratchTheme = {
     fontFamily: 'Lato, sans-serif',
     palette: {
-        primary1Color: '#28c4b7' //'#30d5c8'
+        primary1Color: '#00bcd4'
     }
 };
 
