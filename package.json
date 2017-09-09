@@ -1,7 +1,7 @@
 {
   "name": "react-scratchonthebreak",
   "version": "1.0.0",
-  "description": "Rebuilding my buddy's pool-shaming site in React.",
+  "description": "Rebuilt my buddy's Scratch On The Break site with React.",
   "main": "index.js",
   "repository": {
     "type": "git",
