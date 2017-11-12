@@ -12,6 +12,7 @@ const config = {
     },
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
+            cache: true,
             compress: { warnings: false },
             output: { comments: false }
         }),
