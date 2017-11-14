@@ -1,14 +1,14 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const BUILD_DIR = path.resolve(__dirname, 'src/client/public');
-const APP_DIR = path.resolve(__dirname, 'src/client/app');
+const BUILD_DIR = path.resolve(__dirname, 'public');
+const APP_DIR = path.resolve(__dirname, 'src/app');
 
 const config = {
     entry: `${APP_DIR}/index.jsx`,
     output: {
         path: BUILD_DIR,
-        filename: 'scratchonthebreak-bundle.min.js'
+        filename: 'js/app.min.js'
     },
     plugins: [
         new webpack.optimize.UglifyJsPlugin({

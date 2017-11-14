@@ -26,7 +26,7 @@ export class Home extends React.Component {
 export class Generic extends React.Component {
     componentDidMount() {
         const homeLink = document.getElementById('homeLink');
-        homeLink.className += 'active';
+        homeLink.classList.add('active');
     }
 
     render() {

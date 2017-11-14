@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Home, Generic, Scratched } from './Scratch.jsx';
+import { Home, Generic } from './components/Scratch.jsx';
 
 const path = window.location.pathname;
 
