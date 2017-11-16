@@ -43,5 +43,5 @@ app.use((req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log('react-scratchonthebreak booted up on localhost:3000');
+    console.log('react-scratchonthebreak booted up on port 3000');
 });
