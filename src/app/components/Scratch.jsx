@@ -10,10 +10,10 @@ export class Home extends React.Component {
                 <p>Please answer the following questions to determine who lost.</p>
                 <p className="sub-header">Did your opponent scratch on the break?</p>
                 <div className="button-bar">
-                    <Link to="/sob/">
+                    <Link to="/sob">
                         <RaisedButton primary label="Yes" />
                     </Link>
-                    <Link to="/nsob/">
+                    <Link to="/nsob">
                         <RaisedButton primary label="No" />
                     </Link>
                 </div>
@@ -34,10 +34,10 @@ export class Generic extends React.Component {
             if (this.props.showButtons) {
                 return (
                     <div className="button-bar">
-                        <Link to="/eob/">
+                        <Link to="/eob">
                             <RaisedButton primary label="Yes" />
                         </Link>
-                        <Link to="/neob/">
+                        <Link to="/neob">
                             <RaisedButton primary label="No" />
                         </Link>
                     </div>
