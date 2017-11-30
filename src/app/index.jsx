@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Home, Generic } from './components/Scratch.jsx';
-
-const path = window.location.pathname;
+import { Home, Generic } from './components';
 
 const createFbLikeButton = (d, s, id) => {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -31,6 +29,12 @@ const createTwitterShareButton = (d, s, id) => {
 
 class ScratchOnTheBreak extends React.Component {
     render() {
+        const text = {
+            sob: 'Was the eightball also pocketed on the break?',
+            nsob: 'Why are you on this site if no one scratched on the break?',
+            eob: 'Your opponent lost, unlucky for him or her. He or she probably would have whooped you...',
+            neob: 'Your opponent didn\'t lose. You are an idiot. You should apologize for not knowing the rules.'
+        };
         return (
             <div className="main-content">
                 <h1 className="page-title">Scratch On The Break</h1>
@@ -52,26 +56,26 @@ class ScratchOnTheBreak extends React.Component {
                 </a>
                 {createFbLikeButton(document, 'script', 'facebook-jssdk')}
                 {createTwitterShareButton(document, 'script', 'twitter-wjs')}
-                <BrowserRouter basename={path}>
+                <BrowserRouter basename="/">
                     <Switch>
                         <Route exact path="/" component={Home} />
-                        <Route path="/sob/">
-                            <Generic text="Was the eightball also pocketed on the break?" showButtons={true} />
+                        <Route path="/sob">
+                            <Generic text={text.sob} showButtons={true} />
                         </Route>
-                        <Route path="/nsob/">
-                            <Generic text="Why are you on this site if no one scratched on the break?" showButtons={false} />
+                        <Route path="/nsob">
+                            <Generic text={text.nsob} showButtons={false} />
                         </Route>
-                        <Route path="/eob/">
-                            <Generic text="Your opponent lost, unlucky for him or her. He or she probably would have whooped you..." showButtons={false} />
+                        <Route path="/eob">
+                            <Generic text={text.eob} showButtons={false} />
                         </Route>
-                        <Route path="/neob/">
-                            <Generic text="Your opponent didn't lose. You are an idiot. You should apologize for not knowing the rules." showButtons={false} />
+                        <Route path="/neob">
+                            <Generic text={text.neob} showButtons={false} />
                         </Route>
                     </Switch>
                 </BrowserRouter>
                 <hr className="gray-rule" />
                 <div className="links-bar">
-                    <a href={path} id="homeLink" className="home-link">Home</a>
+                    <a href="/" id="homeLink" className="home-link">Home</a>
                     <a href="mailto:mcpeaven@gmail.com?subject=I'm%20An%20Idiot">I'm Mad</a>
                 </div>
                 <p className="t-copyright">&copy; McPeaven {new Date().getFullYear()}</p>

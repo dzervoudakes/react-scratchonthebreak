@@ -11,24 +11,8 @@ app.get('*/app.min.js', (req, res, next) => {
 
 app.use(express.static(path.join(__dirname, '/public')));
 
-app.get('/', (req, res) => {
+app.get(['/', '/eob', '/neob', '/nsob', '/sob'], (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'));
-});
-
-app.get('/sob', (req, res) => {
-    res.redirect('/');
-});
-
-app.get('/nsob', (req, res) => {
-    res.redirect('/');
-});
-
-app.get('/eob', (req, res) => {
-    res.redirect('/');
-});
-
-app.get('/neob', (req, res) => {
-    res.redirect('/');
 });
 
 app.use((req, res) => {
