@@ -1,6 +1,7 @@
 const express = require('express');
-const app = express();
 const path = require('path');
+
+const app = express();
 const port = process.env.port || 3000;
 
 app.get('*/app.min.js', (req, res, next) => {
