@@ -12,11 +12,6 @@ const config = {
         filename: 'js/app.min.js'
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            cache: true,
-            compress: { warnings: false },
-            output: { comments: false }
-        }),
         new webpack.optimize.AggressiveMergingPlugin(),
         new CompressionPlugin({
             asset: 'js/app.min.js.gz',
