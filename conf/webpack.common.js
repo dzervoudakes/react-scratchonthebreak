@@ -1,12 +1,10 @@
-const webpack = require('webpack');
 const path = require('path');
 const CompressionPlugin = require('compression-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-const APP_DIR = path.resolve(__dirname, 'src/app');
-const BUILD_DIR = path.resolve(__dirname, 'public');
+const APP_DIR = path.resolve(__dirname, '../src/app');
+const BUILD_DIR = path.resolve(__dirname, '../public');
 
-const config = {
+module.exports = {
     devtool: 'source-map',
     entry: `${APP_DIR}/index.jsx`,
     output: {
@@ -14,18 +12,6 @@ const config = {
         filename: 'js/app.min.js'
     },
     plugins: [
-        new UglifyJsPlugin({
-            sourceMap: true,
-            uglifyOptions: {
-                compress: {
-                    warnings: false
-                },
-                output: {
-                    comments: false
-                }
-            }
-        }),
-        new webpack.optimize.AggressiveMergingPlugin(),
         new CompressionPlugin({
             asset: 'js/app.min.js.gz',
             algorithm: 'gzip',
@@ -44,5 +30,3 @@ const config = {
         ]
     }
 };
-
-module.exports = config;
