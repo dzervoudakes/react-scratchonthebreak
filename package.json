@@ -14,8 +14,12 @@
 		"babel-loader": "^7.1.2",
 		"babel-preset-env": "^1.6.1",
 		"babel-preset-react": "^6.24.1",
-		"compression-webpack-plugin": "^1.0.1",
+		"chalk": "^2.3.2",
+		"clean-webpack-plugin": "^0.1.19",
+		"copy-webpack-plugin": "^4.5.1",
+		"html-webpack-plugin": "^3.1.0",
 		"material-ui": "^0.19.1",
+		"ora": "^2.0.0",
 		"react": "^15.6.1",
 		"react-dom": "^15.6.1",
 		"react-router-dom": "^4.2.2",
@@ -29,7 +33,7 @@
 	},
 	"scripts": {
 		"build:dev": "webpack --config ./conf/webpack.dev.js -d",
-		"build:prod": "webpack --config ./conf/webpack.prod.js -p",
+		"build:prod": "node conf/build.js",
 		"start": "nodemon ./bin/www --ignore 'public/**/*'",
 		"watch": "webpack --config ./conf/webpack.dev.js -d --watch"
 	}
