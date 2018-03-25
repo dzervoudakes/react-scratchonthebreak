@@ -3,6 +3,12 @@
 	"version": "1.0.0",
 	"description": "Rebuilt my buddy's Scratch On The Break site with React.",
 	"main": "index.js",
+	"scripts": {
+		"build:dev": "webpack --config ./conf/webpack.dev.js -d",
+		"build:prod": "node conf/build.js",
+		"start": "nodemon ./bin/www --ignore 'public/**/*'",
+		"watch": "webpack --config ./conf/webpack.dev.js -d --watch"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+ssh://git@github.com/dzervoudakes/react-scratchonthebreak.git"
@@ -30,11 +36,5 @@
 	"dependencies": {
 		"express": "^4.16.2",
 		"path": "^0.12.7"
-	},
-	"scripts": {
-		"build:dev": "webpack --config ./conf/webpack.dev.js -d",
-		"build:prod": "node conf/build.js",
-		"start": "nodemon ./bin/www --ignore 'public/**/*'",
-		"watch": "webpack --config ./conf/webpack.dev.js -d --watch"
 	}
 }
