@@ -57,7 +57,11 @@ module.exports = merge(common, {
 			favicon: `${PUBLIC_DIR}/favicon.ico`,
 			filename: 'index.html',
 			template: `${ROOT_DIR}/conf/templates/template.html`,
-			title: 'Scratch On The Break'
+			title: 'Scratch On The Break',
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true
+			}
 		})
 	],
 	output: {
