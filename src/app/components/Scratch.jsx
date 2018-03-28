@@ -46,10 +46,10 @@ export class Generic extends React.Component {
         };
 
         return (
-            <div className="content-container">
+            <Fragment>
                 <p className="sub-header">{this.props.text}</p>
                 {renderButtons()}
-            </div>
+            </Fragment>
         );
     }
 }
