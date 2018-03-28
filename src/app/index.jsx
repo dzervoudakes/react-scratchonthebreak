@@ -12,25 +12,20 @@ class ScratchOnTheBreak extends React.Component {
             nsob: 'Why are you on this site if no one scratched on the break?',
             eob: 'Your opponent lost, unlucky for him or her. He or she probably would have whooped you...',
             neob: 'Your opponent didn\'t lose. You are an idiot. You should apologize for not knowing the rules.'
-        };
+		};
+		const keys = Object.keys(text);
+		const routes = keys.map((key, index) =>
+			<Route path={`/${key}`} key={index}>
+				<Generic text={text[key]} showButtons={key === "sob" ? true : false} />
+			</Route>
+		);
         return (
             <div className="main-content">
                 <Header />
                 <BrowserRouter basename="/">
                     <Switch>
                         <Route exact path="/" component={Home} />
-                        <Route path="/sob">
-                            <Generic text={text.sob} showButtons={true} />
-                        </Route>
-                        <Route path="/nsob">
-                            <Generic text={text.nsob} showButtons={false} />
-                        </Route>
-                        <Route path="/eob">
-                            <Generic text={text.eob} showButtons={false} />
-                        </Route>
-                        <Route path="/neob">
-                            <Generic text={text.neob} showButtons={false} />
-                        </Route>
+						{routes}
                     </Switch>
                 </BrowserRouter>
 				<Footer />
