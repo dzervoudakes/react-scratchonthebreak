@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { ButtonBar } from '@/components/common';
+import { ButtonBar } from '@/components';
 
 const Home = () => (
 	<Fragment>

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
-import { ButtonBar } from '@/components/common';
+import { ButtonBar } from '@/components';
 
 class Generic extends React.PureComponent {
     componentDidMount() {
