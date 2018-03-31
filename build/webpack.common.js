@@ -12,5 +12,9 @@ module.exports = {
 				loader: 'babel-loader'
 			}
 		]
+	},
+	resolve: {
+		extensions: ['.js', '.jsx'],
+		alias: { '@': APP_DIR }
 	}
 };

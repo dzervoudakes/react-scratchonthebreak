@@ -1,11 +1,11 @@
-import { Footer } from './Footer.jsx';
-import { Generic } from './Generic.jsx';
-import { Header } from './Header.jsx';
-import { Home } from './Home.jsx';
+import Header from './header';
+import Home from './home';
+import Generic from './common';
+import Footer from './footer';
 
 export {
-	Footer,
-	Generic,
 	Header,
-    Home
+	Home,
+	Generic,
+	Footer
 };

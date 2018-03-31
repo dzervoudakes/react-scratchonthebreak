@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Footer, Generic, Header, Home } from './components';
+import { Header, Home, Footer } from './components';
+import Generic from './components/common';
 
-class ScratchOnTheBreak extends React.Component {
+class Main extends React.Component {
     render() {
         const text = {
             sob: 'Was the eightball also pocketed on the break?',
@@ -41,13 +42,11 @@ const scratchTheme = {
     }
 };
 
-const App = () => {
-    return (
-        <MuiThemeProvider muiTheme={getMuiTheme(scratchTheme)}>
-            <ScratchOnTheBreak />
-        </MuiThemeProvider>
-    );
-};
+const App = () => (
+	<MuiThemeProvider muiTheme={getMuiTheme(scratchTheme)}>
+		<Main />
+	</MuiThemeProvider>
+);
 
 ReactDOM.render(
     <App />,
