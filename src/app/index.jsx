@@ -5,6 +5,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Header, Home, Footer } from './components';
 import Generic from './components/common';
+import './css/styles';
 
 class Main extends React.Component {
     render() {

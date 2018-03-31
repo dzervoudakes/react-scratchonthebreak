@@ -1,4 +1,5 @@
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const APP_DIR = path.resolve(__dirname, '../src/app');
 
@@ -10,11 +11,18 @@ module.exports = {
 				test: /\.jsx?/,
 				include: APP_DIR,
 				loader: 'babel-loader'
+			},
+			{
+				test: /\.css$/,
+				use: ExtractTextPlugin.extract({
+					fallback: 'style-loader',
+					use: ['css-loader']
+				})
 			}
 		]
 	},
 	resolve: {
-		extensions: ['.js', '.jsx'],
+		extensions: ['.js', '.jsx', '.css'],
 		alias: { '@': APP_DIR }
 	}
 };

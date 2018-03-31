@@ -1,5 +1,7 @@
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -20,6 +22,17 @@ module.exports = merge(common, {
 		}),
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify('production')
+		}),
+		new ExtractTextPlugin('css/styles.min.css', {
+			allChunks: true
+		}),
+		new OptimizeCssAssetsPlugin({
+			assetNameRegExp: /\.min\.css$/,
+			cssProcessorOptions: {
+				discardComments: {
+					removeAll: true
+				}
+			}
 		}),
 		new UglifyJsPlugin({
 			sourceMap: true,
@@ -51,8 +64,7 @@ module.exports = merge(common, {
 		new webpack.optimize.AggressiveMergingPlugin(),
 		new CopyWebpackPlugin([
 			{ from: `${ROOT_DIR}/index.js`, to: `${BUILD_DIR}/index.js` },
-			{ from: `${PUBLIC_DIR}/404.html`, to: `${BUILD_DIR}/public/404.html` },
-			{ from: `${PUBLIC_DIR}/css/`, to: `${BUILD_DIR}/public/css/` }
+			{ from: `${PUBLIC_DIR}/404.html`, to: `${BUILD_DIR}/public/404.html` }
 		]),
 		new HtmlWebpackPlugin({
 			favicon: `${PUBLIC_DIR}/favicon.ico`,
@@ -67,7 +79,7 @@ module.exports = merge(common, {
 		new CompressionPlugin({
 			asset: '[path].gz[query]',
 			algorithm: 'gzip',
-			test: /\.min.js$/,
+			test: /vendor\.(.*)\.min.js$/,
 			minRatio: 0.8
 		})
 	],
