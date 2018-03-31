@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Header, Home, Footer } from './components';
-import Generic from './components/common';
+import { Header, Home, Generic, Footer } from './components';
 import './css/styles';
 
 class Main extends React.Component {
