@@ -1,7 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const APP_DIR = path.resolve(__dirname, '../src/app');
+const APP_DIR = path.resolve(__dirname, '../src');
 
 module.exports = {
 	entry: `${APP_DIR}/index.jsx`,
