@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import RaisedButton from 'material-ui/RaisedButton';
 import { ButtonBar } from '@/components';
 
@@ -9,16 +10,22 @@ class Generic extends React.PureComponent {
     }
 
     render() {
+		const { showButtons, text } = this.props;
         const renderButtons = () => {
-            if (this.props.showButtons) return <ButtonBar yes="eob" no="neob" />;
+            if (showButtons) return <ButtonBar yes="eob" no="neob" />;
         };
         return (
             <Fragment>
-                <p className="sub-header">{this.props.text}</p>
+                <p className="sub-header">{text}</p>
                 {renderButtons()}
             </Fragment>
         );
     }
 }
+
+Generic.propTypes = {
+	showButtons: PropTypes.bool.isRequired,
+	text: PropTypes.string.isRequired
+};
 
 export default Generic;
