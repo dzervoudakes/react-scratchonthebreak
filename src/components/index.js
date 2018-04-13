@@ -1,7 +1,7 @@
 import Header from './header';
 import Home from './home';
-import Generic, { ButtonBar } from './common';
 import Footer from './footer';
+import { Generic, ButtonBar } from './common';
 
 export {
 	Header,
