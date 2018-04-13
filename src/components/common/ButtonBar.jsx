@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { RaisedButton } from 'material-ui';
 
+const propTypes = {
+	yes: PropTypes.string.isRequired,
+	no: PropTypes.string.isRequired
+};
+
 const ButtonBar = ({ yes, no }) => (
 	<div className="button-bar">
 		<Link to={`/${yes}`}>
@@ -14,9 +19,6 @@ const ButtonBar = ({ yes, no }) => (
 	</div>
 );
 
-ButtonBar.propTypes = {
-	yes: PropTypes.string.isRequired,
-	no: PropTypes.string.isRequired
-};
+ButtonBar.propTypes = propTypes;
 
 export default ButtonBar;
