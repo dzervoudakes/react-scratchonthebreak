@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import RaisedButton from 'material-ui/RaisedButton';
-import { ButtonBar } from '@/components';
+import ButtonBar from './ButtonBar';
 
 const propTypes = {
 	showButtons: PropTypes.bool.isRequired,

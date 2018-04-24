@@ -1,12 +1,3 @@
-import Header from './header';
-import Home from './home';
-import Footer from './footer';
-import { Generic, ButtonBar } from './common';
+import App from './App';
 
-export {
-	Header,
-	Home,
-	ButtonBar,
-	Generic,
-	Footer
-};
+export default App;
