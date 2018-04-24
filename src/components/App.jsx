@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Header from './header';
 import Home from './home';
 import Footer from './footer';
@@ -21,12 +21,10 @@ const App = () => {
 	return (
 		<div className="main-content">
 			<Header />
-			<BrowserRouter basename="/">
-				<Switch>
-					<Route exact path="/" component={Home} />
-					{routes}
-				</Switch>
-			</BrowserRouter>
+			<Switch>
+				<Route exact path="/" component={Home} />
+				{routes}
+			</Switch>
 			<Footer />
 		</div>
 	);
