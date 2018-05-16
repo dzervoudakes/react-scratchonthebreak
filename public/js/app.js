@@ -5204,7 +5204,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n\tvalue: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.Generic = exports.ButtonBar = undefined;\n\nvar _ButtonBar = __webpack_require__(/*! ./ButtonBar */ \"./src/components/common/ButtonBar.jsx\");\n\nvar _ButtonBar2 = _interopRequireDefault(_ButtonBar);\n\nvar _Generic = __webpack_require__(/*! ./Generic */ \"./src/components/common/Generic.jsx\");\n\nvar _Generic2 = _interopRequireDefault(_Generic);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.ButtonBar = _ButtonBar2.default;\nexports.Generic = _Generic2.default;\n\n//# sourceURL=webpack:///./src/components/common/index.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _ButtonBar = __webpack_require__(/*! ./ButtonBar */ \"./src/components/common/ButtonBar.jsx\");\n\nObject.defineProperty(exports, 'ButtonBar', {\n  enumerable: true,\n  get: function get() {\n    return _interopRequireDefault(_ButtonBar).default;\n  }\n});\n\nvar _Generic = __webpack_require__(/*! ./Generic */ \"./src/components/common/Generic.jsx\");\n\nObject.defineProperty(exports, 'Generic', {\n  enumerable: true,\n  get: function get() {\n    return _interopRequireDefault(_Generic).default;\n  }\n});\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n//# sourceURL=webpack:///./src/components/common/index.js?");
 
 /***/ }),
 

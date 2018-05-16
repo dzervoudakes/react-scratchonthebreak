@@ -1,4 +1,2 @@
-import ButtonBar from './ButtonBar';
-import Generic from './Generic';
-
-export { ButtonBar, Generic };
+export { default as ButtonBar } from './ButtonBar';
+export { default as Generic } from './Generic';
