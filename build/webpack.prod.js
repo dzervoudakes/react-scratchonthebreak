@@ -5,7 +5,6 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
 const path = require('path');
@@ -27,7 +26,7 @@ module.exports = merge(common, {
 		new CleanWebpackPlugin(['dist'], {
 			root: ROOT_DIR
 		}),
-		new ExtractTextPlugin('css/styles.[hash:8].min.css', {
+		new ExtractTextPlugin('css/[name].[hash:8].min.css', {
 			allChunks: true
 		}),
 		new OptimizeCssAssetsPlugin({
@@ -61,14 +60,9 @@ module.exports = merge(common, {
 			title: 'Scratch On The Break',
 			minify: {
 				removeComments: true,
-				collapseWhitespace: true
+				collapseWhitespace: true,
+				removeAttributeQuotes: true
 			}
-		}),
-		new CompressionPlugin({
-			asset: '[path].gz[query]',
-			algorithm: 'gzip',
-			test: /vendor\.(.*)\.min\.js/,
-			minRatio: 0.8
 		})
 	],
 	optimization: {

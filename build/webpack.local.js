@@ -20,7 +20,7 @@ module.exports = merge(common, {
 			template: `${ROOT_DIR}/build/templates/template.html`,
 			title: 'Scratch On The Break'
 		}),
-		new ExtractTextPlugin('css/styles.css', {
+		new ExtractTextPlugin('css/[name].css', {
 			allChunks: true
 		})
 	],

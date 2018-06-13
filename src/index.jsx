@@ -4,7 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './components';
-import './css/styles';
+import './css/app';
 
 const scratchTheme = {
 	fontFamily: 'Lato, sans-serif',
