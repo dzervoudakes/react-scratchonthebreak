@@ -51,6 +51,6 @@ class Header extends React.PureComponent {
 			</Fragment>
 		);
 	}
-};
+}
 
 export default Header;

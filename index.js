@@ -16,5 +16,6 @@ app.use((req, res) => {
 });
 
 app.listen(port, () => {
+	// eslint-disable-next-line
 	console.log(`react-scratchonthebreak booted up on port ${port}`);
 });
