@@ -74,7 +74,8 @@ module.exports = merge(common, {
 				removeComments: true,
 				collapseWhitespace: true,
 				removeAttributeQuotes: true
-			}
+			},
+			chunksSortMode: 'dependency'
 		})
 	],
 	optimization: {
