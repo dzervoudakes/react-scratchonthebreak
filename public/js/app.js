@@ -5245,18 +5245,6 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 
 /***/ }),
 
-/***/ "./src/components/index.js":
-/*!*********************************!*\
-  !*** ./src/components/index.js ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _App = __webpack_require__(/*! ./App */ \"./src/components/App.jsx\");\n\nvar _App2 = _interopRequireDefault(_App);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.default = _App2.default;\n\n//# sourceURL=webpack:///./src/components/index.js?");
-
-/***/ }),
-
 /***/ "./src/css/app.css":
 /*!*************************!*\
   !*** ./src/css/app.css ***!
@@ -5276,7 +5264,7 @@ eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./sr
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _MuiThemeProvider = __webpack_require__(/*! material-ui/styles/MuiThemeProvider */ \"./node_modules/material-ui/styles/MuiThemeProvider.js\");\n\nvar _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);\n\nvar _getMuiTheme = __webpack_require__(/*! material-ui/styles/getMuiTheme */ \"./node_modules/material-ui/styles/getMuiTheme.js\");\n\nvar _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _components = __webpack_require__(/*! ./components */ \"./src/components/index.js\");\n\nvar _components2 = _interopRequireDefault(_components);\n\n__webpack_require__(/*! ./css/app */ \"./src/css/app.css\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar scratchTheme = {\n\tfontFamily: 'Lato, sans-serif',\n\tpalette: {\n\t\tprimary1Color: '#00bcd4'\n\t}\n};\n\nvar Main = function Main() {\n\treturn _react2.default.createElement(\n\t\t_MuiThemeProvider2.default,\n\t\t{ muiTheme: (0, _getMuiTheme2.default)(scratchTheme) },\n\t\t_react2.default.createElement(\n\t\t\t_reactRouterDom.BrowserRouter,\n\t\t\t{ basename: '/' },\n\t\t\t_react2.default.createElement(_components2.default, null)\n\t\t)\n\t);\n};\n\n_reactDom2.default.render(_react2.default.createElement(Main, null), document.getElementById('app'));\n\n//# sourceURL=webpack:///./src/index.jsx?");
+eval("\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _MuiThemeProvider = __webpack_require__(/*! material-ui/styles/MuiThemeProvider */ \"./node_modules/material-ui/styles/MuiThemeProvider.js\");\n\nvar _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);\n\nvar _getMuiTheme = __webpack_require__(/*! material-ui/styles/getMuiTheme */ \"./node_modules/material-ui/styles/getMuiTheme.js\");\n\nvar _getMuiTheme2 = _interopRequireDefault(_getMuiTheme);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _App = __webpack_require__(/*! ./components/App */ \"./src/components/App.jsx\");\n\nvar _App2 = _interopRequireDefault(_App);\n\n__webpack_require__(/*! ./css/app */ \"./src/css/app.css\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar theme = {\n\tfontFamily: 'Lato, sans-serif',\n\tpalette: {\n\t\tprimary1Color: '#00bcd4'\n\t}\n};\n\nvar Main = function Main() {\n\treturn _react2.default.createElement(\n\t\t_MuiThemeProvider2.default,\n\t\t{ muiTheme: (0, _getMuiTheme2.default)(theme) },\n\t\t_react2.default.createElement(\n\t\t\t_reactRouterDom.BrowserRouter,\n\t\t\t{ basename: '/' },\n\t\t\t_react2.default.createElement(_App2.default, null)\n\t\t)\n\t);\n};\n\n_reactDom2.default.render(_react2.default.createElement(Main, null), document.getElementById('app'));\n\n//# sourceURL=webpack:///./src/index.jsx?");
 
 /***/ })
 
