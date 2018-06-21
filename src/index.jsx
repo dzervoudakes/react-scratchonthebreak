@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { BrowserRouter as Router } from 'react-router-dom';
-import App from './components';
+import App from './components/App';
 import './css/app';
 
-const scratchTheme = {
+const theme = {
 	fontFamily: 'Lato, sans-serif',
 	palette: {
 		primary1Color: '#00bcd4'
@@ -14,7 +14,7 @@ const scratchTheme = {
 };
 
 const Main = () => (
-	<MuiThemeProvider muiTheme={getMuiTheme(scratchTheme)}>
+	<MuiThemeProvider muiTheme={getMuiTheme(theme)}>
 		<Router basename="/">
 			<App />
 		</Router>
