@@ -40,12 +40,14 @@ class Header extends React.PureComponent {
 					data-action="like"
 					data-size="small"
 					data-show-faces="false"
-					data-share="true">
+					data-share="true"
+				>
 				</div>
 				<a
 					className="twitter-share-button"
 					data-text="Check out scratchonthebreak.com!"
-					href="https://twitter.com/intent/tweet">
+					href="https://twitter.com/intent/tweet"
+				>
 					Tweet
 				</a>
 			</Fragment>

@@ -14,7 +14,7 @@ const theme = {
 };
 
 const Main = () => (
-	<MuiThemeProvider muiTheme={getMuiTheme(theme)}>
+	<MuiThemeProvider muiTheme={ getMuiTheme(theme) }>
 		<Router basename="/">
 			<App />
 		</Router>

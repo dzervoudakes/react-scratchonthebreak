@@ -10,10 +10,10 @@ const propTypes = {
 
 const ButtonBar = ({ yes, no }) => (
 	<div className="button-bar">
-		<Link to={`/${yes}`}>
+		<Link to={ `/${yes}` }>
 			<RaisedButton primary label="Yes" />
 		</Link>
-		<Link to={`/${no}`}>
+		<Link to={ `/${no}` }>
 			<RaisedButton primary label="No" />
 		</Link>
 	</div>
