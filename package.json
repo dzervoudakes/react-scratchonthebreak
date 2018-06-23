@@ -24,7 +24,6 @@
 		"babel-preset-react": "^6.24.1",
 		"chalk": "^2.3.2",
 		"clean-webpack-plugin": "^0.1.19",
-		"connect-history-api-fallback": "^1.5.0",
 		"copy-webpack-plugin": "^4.5.1",
 		"css-loader": "^0.28.11",
 		"eslint": "^4.19.1",
@@ -46,6 +45,7 @@
 		"webpack-merge": "^4.1.2"
 	},
 	"dependencies": {
+		"connect-history-api-fallback": "^1.5.0",
 		"express": "^4.16.2",
 		"path": "^0.12.7"
 	},
