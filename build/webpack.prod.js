@@ -61,14 +61,14 @@ module.exports = merge(common, {
 			}
 		}),
 		new webpack.optimize.AggressiveMergingPlugin(),
-		new CopyWebpackPlugin([
-			{ from: `${ROOT_DIR}/index.js`, to: `${BUILD_DIR}/index.js` },
-			{ from: `${PUBLIC_DIR}/404.html`, to: `${BUILD_DIR}/public/404.html` }
-		]),
+		new CopyWebpackPlugin([{
+			from: `${ROOT_DIR}/index.js`,
+			to: `${BUILD_DIR}/index.js`
+		}]),
 		new HtmlWebpackPlugin({
 			favicon: `${PUBLIC_DIR}/favicon.ico`,
 			filename: 'index.html',
-			template: `${ROOT_DIR}/build/templates/template.html`,
+			template: `${PUBLIC_DIR}/index.html`,
 			title: 'Scratch On The Break',
 			minify: {
 				removeComments: true,

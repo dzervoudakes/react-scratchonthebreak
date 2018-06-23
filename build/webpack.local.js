@@ -5,7 +5,7 @@ const merge = require('webpack-merge');
 const common = require('./webpack.common');
 const path = require('path');
 
-const BUILD_DIR = path.resolve(__dirname, '../public');
+const PUBLIC_DIR = path.resolve(__dirname, '../public');
 const ROOT_DIR = path.resolve(__dirname, '../');
 
 module.exports = merge(common, {
@@ -15,20 +15,18 @@ module.exports = merge(common, {
 			NODE_ENV: 'development'
 		}),
 		new HtmlWebpackPlugin({
-			favicon: `${BUILD_DIR}/favicon.ico`,
+			favicon: `${PUBLIC_DIR}/favicon.ico`,
 			filename: 'index.html',
-			template: `${ROOT_DIR}/build/templates/template.html`,
-			title: 'Scratch On The Break'
+			template: `${PUBLIC_DIR}/index.html`,
+			title: 'Scratch On The Break',
+			inject: true
 		}),
 		new ExtractTextPlugin('css/[name].css', {
 			allChunks: true
 		})
 	],
-	watchOptions: {
-		ignored: [BUILD_DIR]
-	},
 	output: {
-		path: BUILD_DIR,
+		path: ROOT_DIR,
 		filename: 'js/[name].js'
 	}
 });
