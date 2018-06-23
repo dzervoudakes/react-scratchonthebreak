@@ -1,7 +1,27 @@
-# react-scratchonthebreak
-Rebuilt my buddy's "Scratch On The Break" site with React.
+# Scratch On The Break
+> Rebuilt my buddy's [https://scratchonthebreak.com/](Scratch On The Break) site with React.
 
-https://scratchonthebreak.com/
+### Instructions
+
+##### Start Local Server
+```
+npm start
+```
+
+##### Run Linting
+```
+npm run lint
+```
+
+##### Run Linting with Fix
+```
+npm run lint:fix
+```
+
+##### Build for Production
+```
+npm run build
+```
 
 - - - -
 
