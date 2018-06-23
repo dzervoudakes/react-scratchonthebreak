@@ -5,22 +5,29 @@
 
 ### Instructions
 
-Start Local Server
+##### Install Dependencies
+Note: I recommend `node` >= v9.0.0 and `npm` >= v5.6.0 to run the application.
+
+```
+npm install
+```
+
+##### Start Local Server
 ```
 npm start
 ```
 
-Run Linting
+##### Run Linting
 ```
 npm run lint
 ```
 
-Run Linting with Fix
+##### Run Linting with Fix
 ```
 npm run lint:fix
 ```
 
-Build for Production
+##### Build for Production
 ```
 npm run build
 ```
