@@ -5,6 +5,8 @@ const fallback = require('connect-history-api-fallback');
 const app = express();
 const port = process.env.port || 8080;
 
+app.use(fallback());
+
 if (process.env.NODE_ENV === 'development') {
 	const webpack = require('webpack');
 	const webpackConfig = require('./build/webpack.local');
@@ -25,7 +27,6 @@ if (process.env.NODE_ENV === 'production') {
 	});
 }
 
-app.use(fallback());
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.listen(port, () => {
