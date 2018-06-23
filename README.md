@@ -1,8 +1,6 @@
 # Scratch On The Break
 > Rebuilt my buddy's [Scratch On The Break](https://scratchonthebreak.com/) site with React.
 
-- - - -
-
 ## Instructions
 
 ##### Install Dependencies
@@ -31,8 +29,6 @@ npm run lint:fix
 ```
 npm run build
 ```
-
-- - - -
 
 ## Some Technologies Used
 * React
