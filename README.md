@@ -30,7 +30,7 @@ npm run lint:fix
 npm run build
 ```
 
-##### Server Environments
+## Server Environments
 The same Express server runs development and production builds.
 
 > To run the server locally with webpack dev middleware, set `NODE_ENV=development`
