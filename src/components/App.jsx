@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Header from './header';
 import Home from './home';
 import Footer from './footer';
+import Missing from './missing';
 import { Generic } from './common';
 
 const App = () => {
@@ -14,7 +15,7 @@ const App = () => {
 	};
 	const keys = Object.keys(text);
 	const routes = keys.map((key, index) =>
-		<Route path={ `/${key}` } key={ index }>
+		<Route exact path={ `/${key}` } key={ index }>
 			<Generic text={ text[key] } showButtons={ key === "sob" ? true : false } />
 		</Route>
 	);
@@ -24,6 +25,7 @@ const App = () => {
 			<Switch>
 				<Route exact path="/" component={ Home } />
 				{routes}
+				<Route component={ Missing } />
 			</Switch>
 			<Footer />
 		</div>
