@@ -16,6 +16,7 @@
 	"author": "dzervoudakes",
 	"license": "MIT",
 	"devDependencies": {
+		"autoprefixer": "^8.6.3",
 		"babel-core": "^6.26.0",
 		"babel-eslint": "^8.2.3",
 		"babel-loader": "^7.1.2",
@@ -33,6 +34,7 @@
 		"material-ui": "^0.19.1",
 		"optimize-css-assets-webpack-plugin": "^4.0.1",
 		"ora": "^2.0.0",
+		"postcss-loader": "^2.1.5",
 		"prop-types": "^15.6.1",
 		"react": "^16.4.0",
 		"react-dom": "^16.4.0",

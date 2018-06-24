@@ -16,9 +16,29 @@ module.exports = {
 			},
 			{
 				test: /\.css$/,
+				exclude: /node_modules/,
 				use: ExtractTextPlugin.extract({
-					fallback: 'style-loader',
-					use: ['css-loader']
+					fallback: {
+						loader: 'style-loader',
+						options: {
+							hmr: false
+						}
+					},
+					use: [{
+						loader: 'css-loader',
+						options: {
+							importLoaders: 1
+						}
+					},
+					{
+						loader: 'postcss-loader',
+						options: {
+							ident: 'postcss',
+							plugins: () => [
+								require('autoprefixer')
+							]
+						}
+					}]
 				})
 			}
 		]
