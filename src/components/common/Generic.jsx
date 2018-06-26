@@ -21,7 +21,7 @@ class Generic extends React.PureComponent {
 		return (
 			<Fragment>
 				<p className="sub-header">{text}</p>
-				{renderButtons()}
+				{ renderButtons() }
 			</Fragment>
 		);
 	}
