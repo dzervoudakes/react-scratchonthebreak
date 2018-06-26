@@ -16,7 +16,7 @@ const App = () => {
 	const keys = Object.keys(text);
 	const routes = keys.map((key, index) =>
 		<Route exact path={ `/${key}` } key={ index }>
-			<Generic text={ text[key] } showButtons={ key === "sob" ? true : false } />
+			<Generic text={ text[key] } showButtons={ key === 'sob' ? true : false } />
 		</Route>
 	);
 	return (

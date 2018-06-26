@@ -24,21 +24,15 @@ module.exports = {
 							hmr: false
 						}
 					},
-					use: [{
-						loader: 'css-loader',
-						options: {
-							importLoaders: 1
-						}
-					},
-					{
-						loader: 'postcss-loader',
-						options: {
-							ident: 'postcss',
-							plugins: () => [
-								require('autoprefixer')
-							]
-						}
-					}]
+					use: [
+						{
+							loader: 'css-loader',
+							options: {
+								importLoaders: 1
+							}
+						},
+						'postcss-loader'
+					]
 				})
 			}
 		]
