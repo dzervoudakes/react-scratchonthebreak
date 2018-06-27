@@ -19,15 +19,15 @@ if (process.env.NODE_ENV === 'development') {
 	});
 
 	app.use(devMiddleware);
-	app.use(express.static(path.join(__dirname, '/public')));
 }
 
 if (process.env.NODE_ENV === 'production') {
-	app.use(express.static(path.join(__dirname, '/public')));
-	app.use((req, res) => {
+	app.get('/', (req, res) => {
 		res.sendFile(path.join(__dirname, '/public/index.html'));
 	});
 }
+
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.listen(port, () => {
 	// eslint-disable-next-line
