@@ -21,14 +21,6 @@ module.exports = merge(common, {
 	},
 	module: {
 		rules: [{
-			test: /\.jsx$/,
-			include: path.resolve(__dirname, '../src'),
-			loader: 'babel-loader',
-			query: {
-				plugins: ['transform-react-remove-prop-types']
-			}
-		},
-		{
 			test: /\.css$/,
 			include: /node_modules/,
 			use: ExtractTextPlugin.extract({
@@ -52,6 +44,7 @@ module.exports = merge(common, {
 	},
 	plugins: [
 		new webpack.EnvironmentPlugin({
+			BABEL_ENV: 'production',
 			NODE_ENV: 'production'
 		}),
 		new CleanWebpackPlugin(['dist'], {
