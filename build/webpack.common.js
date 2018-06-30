@@ -41,7 +41,7 @@ module.exports = {
 				loader: 'url-loader',
 				options: {
 					limit: 10000,
-					name: 'img/[name].hash:7].[ext]'
+					name: 'img/[name].[hash:7].[ext]'
 				}
 			}
 		]
@@ -50,7 +50,7 @@ module.exports = {
 		extensions: ['.js', '.jsx', '.css'],
 		alias: {
 			'@': APP_DIR,
-			'public': `${ROOT_DIR}/public`
+			'@public': `${ROOT_DIR}/public`
 		}
 	}
 };
