@@ -2,6 +2,7 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const APP_DIR = path.resolve(__dirname, '../src');
+const ROOT_DIR = path.resolve(__dirname, '../');
 
 module.exports = {
 	entry: {
@@ -34,11 +35,22 @@ module.exports = {
 						'postcss-loader'
 					]
 				})
+			},
+			{
+				test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+				loader: 'url-loader',
+				options: {
+					limit: 10000,
+					name: 'img/[name].hash:7].[ext]'
+				}
 			}
 		]
 	},
 	resolve: {
 		extensions: ['.js', '.jsx', '.css'],
-		alias: { '@': APP_DIR }
+		alias: {
+			'@': APP_DIR,
+			'public': `${ROOT_DIR}/public`
+		}
 	}
 };
