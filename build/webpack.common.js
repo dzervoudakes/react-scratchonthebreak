@@ -2,7 +2,7 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const APP_DIR = path.resolve(__dirname, '../src');
-const ROOT_DIR = path.resolve(__dirname, '../');
+const PUBLIC_DIR = path.resolve(__dirname, '../public');
 
 module.exports = {
 	entry: {
@@ -50,7 +50,7 @@ module.exports = {
 		extensions: ['.js', '.jsx', '.css'],
 		alias: {
 			'@': APP_DIR,
-			'@public': `${ROOT_DIR}/public`
+			'@public': PUBLIC_DIR
 		}
 	}
 };
