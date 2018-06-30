@@ -3,18 +3,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
-const path = require('path');
+const config = require('../config');
 
-const PUBLIC_DIR = path.resolve(__dirname, '../public');
-const ROOT_DIR = path.resolve(__dirname, '../');
+const { PUBLIC_DIR, ROOT_DIR } = config.directories;
 
 module.exports = merge(common, {
 	mode: 'development',
 	plugins: [
-		new webpack.EnvironmentPlugin({
-			BABEL_ENV: 'development',
-			NODE_ENV: 'development'
-		}),
+		new webpack.EnvironmentPlugin(
+			config.env.development
+		),
 		new HtmlWebpackPlugin({
 			favicon: `${PUBLIC_DIR}/favicon.ico`,
 			filename: 'index.html',

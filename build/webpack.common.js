@@ -1,8 +1,7 @@
-const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const config = require('../config');
 
-const APP_DIR = path.resolve(__dirname, '../src');
-const PUBLIC_DIR = path.resolve(__dirname, '../public');
+const { APP_DIR, PUBLIC_DIR } = config.directories;
 
 module.exports = {
 	entry: {
