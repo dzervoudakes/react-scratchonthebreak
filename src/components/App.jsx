@@ -24,7 +24,7 @@ const App = () => {
 			<Header />
 			<Switch>
 				<Route exact path="/" component={ Home } />
-				{routes}
+				{ routes }
 				<Route component={ Missing } />
 			</Switch>
 			<Footer />
