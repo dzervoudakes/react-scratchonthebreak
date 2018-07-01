@@ -47,9 +47,6 @@ module.exports = {
 	},
 	resolve: {
 		extensions: ['.js', '.jsx', '.css'],
-		alias: {
-			'@': APP_DIR,
-			'@public': PUBLIC_DIR
-		}
+		alias: { '@': APP_DIR }
 	}
 };
