@@ -2,7 +2,7 @@ module.exports = {
 	extends: 'stylelint-config-standard',
 	syntax: 'css',
 	plugins: ['stylelint-order'],
-  rules: {
+	rules: {
 		'declaration-block-no-redundant-longhand-properties': true,
 		'indentation': 'tab',
 		'order/properties-alphabetical-order': true,
