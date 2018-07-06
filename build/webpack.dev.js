@@ -22,9 +22,11 @@ module.exports = merge(common, {
 		}),
 		new ExtractTextPlugin('css/[name].css', {
 			allChunks: true
-		}),
-		new webpack.NoEmitOnErrorsPlugin()
+		})
 	],
+	optimization: {
+		noEmitOnErrors: true
+	},
 	output: {
 		path: ROOT_DIR,
 		filename: 'js/[name].js'
