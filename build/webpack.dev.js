@@ -25,7 +25,8 @@ module.exports = merge(common, {
 		})
 	],
 	optimization: {
-		noEmitOnErrors: true
+		noEmitOnErrors: true,
+		namedModules: true
 	},
 	output: {
 		path: ROOT_DIR,
