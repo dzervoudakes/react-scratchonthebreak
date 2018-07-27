@@ -25,7 +25,6 @@ webpack(config, (err, stats) => {
 
 	console.log(chalk.cyan('Built files from \'dist\' are ready to be deployed.\n'));
 	console.log(chalk.yellow(
-		'Tip: the Express server requires this package\'s ' +
-		'production dependencies in order to run.\n'
+		'Tip: built files are meant to be served via AWS S3 bucket.'
 	));
 });

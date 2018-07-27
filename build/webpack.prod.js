@@ -3,7 +3,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
@@ -47,10 +46,6 @@ module.exports = merge(common, {
 			}
 		}),
 		new webpack.optimize.AggressiveMergingPlugin(),
-		new CopyWebpackPlugin([{
-			from: `${ROOT_DIR}/index.js`,
-			to: `${BUILD_DIR}/index.js`
-		}]),
 		new HtmlWebpackPlugin({
 			favicon: `${PUBLIC_DIR}/favicon.ico`,
 			filename: 'index.html',
@@ -79,7 +74,7 @@ module.exports = merge(common, {
 		}
 	},
 	output: {
-		path: `${BUILD_DIR}/public`,
+		path: BUILD_DIR,
 		filename: 'js/[name].[chunkhash].min.js',
 		sourceMapFilename: 'js/[name].[chunkhash].min.map',
 		chunkFilename: 'js/[name].[chunkhash].min.js'
