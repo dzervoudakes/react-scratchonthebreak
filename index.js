@@ -30,6 +30,5 @@ if (process.env.NODE_ENV === 'production') {
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.listen(port, () => {
-	// eslint-disable-next-line
 	console.log(`react-scratchonthebreak booted up on port ${port}`);
 });

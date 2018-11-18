@@ -9,6 +9,12 @@ module.exports = {
 		}
 	},
 	plugins: ['react', 'import'],
+	overrides: [{
+		files: ['index.js', 'build/*.js'],
+		rules: {
+			'no-console': 0
+		}
+	}],
 	rules: {
 		'arrow-parens': ['error', 'as-needed'],
 		'comma-dangle': ['error', 'never'],
